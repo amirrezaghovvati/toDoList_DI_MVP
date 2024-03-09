@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:cardCornerRadius="120dp"
+        android:background="@drawable/sh_shape_layouts"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome"
+        android:layout_gravity="center_horizontal"
+        android:textSize="32sp"
+        android:fontFamily="@font/product_sans_bold"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+
+        android:textSize="14sp"
+        android:gravity="center"
+        android:text="Compound effect means life,life means coumpound effect!"
+        android:layout_gravity="center_horizontal"
+        android:fontFamily="@font/product_sans"/>
+
+</LinearLayout>

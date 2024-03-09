@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <FrameLayout
+            android:id="@+id/myTopMargin"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            app:cardCornerRadius="120dp"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/sh_shape_layouts"
+            >
+
+            <TextView
+                android:id="@+id/tvMonthName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/product_sans_bold"
+                android:text="January"
+                android:textColor="@color/black"
+                android:textSize="28sp" />
+            <ImageView
+                android:id="@+id/backStatic"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_gravity="start"
+                android:src="@drawable/i_back_arrow"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="16dp"/>
+
+
+        </FrameLayout>
+        <com.anychart.AnyChartView
+            android:layout_below="@id/myTopMargin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:id="@+id/anyChartView"/>
+        <LinearLayout
+            android:id="@+id/emptyStateStatic"
+            android:layout_below="@id/myTopMargin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginTop="180dp"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/explaining_analytical_chart"
+                android:layout_marginTop="24dp"
+                android:layout_marginStart="46dp"
+                android:layout_marginEnd="46dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="There is no char for showing!"/>
+            <TextView
+                android:id="@+id/tvAddData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/colorAccent"
+                android:text="Add Some Data"/>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

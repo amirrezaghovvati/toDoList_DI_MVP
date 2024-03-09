@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav"
+    app:startDestination="@id/fragmentMonth">
+
+    <fragment
+        android:id="@+id/fragmentDay"
+        android:name="com.example.ce_todolistmvp.Days.day.FragmentDay"
+        android:label="FragmentDay" >
+        <action
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            android:id="@+id/action_fragmentDay_to_fragmentAddDay"
+            app:destination="@id/fragmentAddDay" />
+        <argument
+            android:name="month"
+            app:argType="com.example.ce_todolistmvp.Model.model.Month" />
+        <argument
+            android:name="days"
+            app:argType="com.example.ce_todolistmvp.Model.model.Days" />
+        <action
+
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            android:id="@+id/action_fragmentDay_to_fragmentCategory"
+            app:destination="@id/fragmentCategory" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAddDay"
+        tools:layout="@layout/add_day"
+        android:name="com.example.ce_todolistmvp.Days.addDay.FragmentAddDay"
+        android:label="FragmentAddDay" >
+        <argument
+            android:name="month"
+            app:argType="com.example.ce_todolistmvp.Model.model.Month" />
+        <action
+            app:popUpTo="@id/fragmentDay"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            android:id="@+id/action_fragmentAddDay_to_fragmentDay"
+            app:destination="@id/fragmentDay" />
+        <argument
+            android:name="state"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="days"
+            app:argType="com.example.ce_todolistmvp.Model.model.Days" />
+    </fragment>
+    <navigation android:id="@+id/navigation"
+        app:startDestination="@id/fragmnetGetStart">
+        <fragment
+            tools:layout="@layout/get_start"
+            android:id="@+id/fragmnetGetStart"
+            android:name="com.example.ce_todolistmvp.Starter.GetStart.FragmnetGetStart"
+            android:label="FragmnetGetStart" >
+            <action
+                app:popUpTo="@id/fragmentAuth"
+                app:popUpToInclusive="true"
+                app:enterAnim="@anim/fade_in"
+                app:exitAnim="@anim/fade_out"
+                app:popEnterAnim="@anim/fade_in"
+                app:popExitAnim="@anim/fade_out"
+                android:id="@+id/action_fragmnetGetStart_to_fragmentAuth"
+                app:destination="@id/fragmentAuth" />
+        </fragment>
+        <fragment
+            tools:layout="@layout/your_info"
+            android:id="@+id/fragmentAuth"
+            android:name="com.example.ce_todolistmvp.Starter.Authorization.FragmentAuth"
+            android:label="FragmentAuth" />
+        <action
+            app:popUpTo="@id/fragmentMonth"
+            app:popUpToInclusive="false"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            android:id="@+id/action_global_fragmentMonth"
+            app:destination="@id/fragmentMonth" />
+    </navigation>
+    <fragment
+        android:id="@+id/fragmentMonth"
+        android:name="com.example.ce_todolistmvp.Month.FragmentMonth"
+        android:label="FragmentMonth" >
+        <action
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            app:popUpTo="@id/navigation"
+            app:popUpToInclusive="false"
+            android:id="@+id/action_fragmentMonth_to_navigation"
+            app:destination="@id/navigation" />
+        <action
+            app:popUpTo="@layout/day_fragment"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            android:id="@+id/action_fragmentMonth_to_fragmentDay"
+            app:destination="@id/fragmentDay" />
+        <action
+            app:popUpTo="@id/fragmentStatic"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            android:id="@+id/action_fragmentMonth_to_fragmentStatic"
+            app:destination="@id/fragmentStatic" />
+        <action
+            app:popUpTo="@id/fragmenProfile"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            android:id="@+id/action_fragmentMonth_to_fragmenProfile"
+            app:destination="@id/fragmenProfile" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentStatic"
+        android:name="com.example.ce_todolistmvp.Static.FragmentStatic"
+        android:label="FragmentStatic" >
+        <action
+            app:popUpTo="@id/fragmentMonth"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            android:id="@+id/action_fragmentStatic_to_fragmentMonth"
+            app:destination="@id/fragmentMonth" />
+        <argument
+            android:name="month"
+            app:argType="com.example.ce_todolistmvp.Model.model.Month" />
+    </fragment>
+    <fragment
+        tools:layout="@layout/edit_profile"
+        android:id="@+id/fragmenProfile"
+        android:name="com.example.ce_todolistmvp.EditProfile.FragmenProfile"
+        android:label="FragmenProfile" >
+        <action
+            app:popUpTo="@id/fragmentMonth"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            android:id="@+id/action_fragmenProfile_to_fragmentMonth"
+            app:destination="@id/fragmentMonth" />
+        <action
+            app:popUpTo="@id/fragmnetGetStart"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            android:id="@+id/action_fragmenProfile_to_navigation"
+            app:destination="@id/navigation" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCategory"
+        android:name="com.example.ce_todolistmvp.Category.Category.FragmentCategory"
+        android:label="FragmentCategory" >
+        <action
+            app:popUpTo="@id/fragmentAddCategory"
+            app:popUpToInclusive="false"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            android:id="@+id/action_fragmentCategory_to_fragmentAddCategory"
+            app:destination="@id/fragmentAddCategory" />
+        <argument
+            android:name="days"
+            app:argType="com.example.ce_todolistmvp.Model.model.Days" />
+        <action
+            app:popUpTo="@id/fragmentDay"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            android:id="@+id/action_fragmentCategory_to_fragmentDay"
+            app:destination="@id/fragmentDay" />
+        <action
+            app:popUpTo="@id/fragmentTask"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            android:id="@+id/action_fragmentCategory_to_fragmentTask"
+            app:destination="@id/fragmentTask" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAddCategory"
+        android:name="com.example.ce_todolistmvp.Category.AddCategory.FragmentAddCategory"
+        android:label="FragmentAddCategory" >
+        <argument
+
+            android:name="days"
+            app:argType="com.example.ce_todolistmvp.Model.model.Days" />
+        <action
+            app:popUpTo="@id/fragmentCategory"
+            app:popUpToInclusive="true"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out"
+            android:id="@+id/action_fragmentAddCategory_to_fragmentCategory"
+            app:destination="@id/fragmentCategory" />
+        <argument
+            android:name="category"
+            app:argType="com.example.ce_todolistmvp.Model.model.Category" />
+        <argument
+            android:name="state"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentTask"
+        android:name="com.example.ce_todolistmvp.Tasks.FragmentTask"
+        android:label="FragmentTask" >
+        <argument
+            android:name="category"
+            app:argType="com.example.ce_todolistmvp.Model.model.Category" />
+    </fragment>
+</navigation>

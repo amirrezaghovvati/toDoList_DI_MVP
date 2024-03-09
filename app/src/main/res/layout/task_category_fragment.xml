@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:orientation="vertical"
+        android:background="@drawable/sh_shape_layouts_full"
+        >
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+            <ImageView
+                android:id="@+id/clearAllCategory"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/baseline_clear_all_24"
+                android:layout_gravity="end"
+                android:layout_marginEnd="16dp"
+                android:layout_marginTop="16dp"/>
+            <ImageView
+                android:id="@+id/backArrowTaskCat"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_gravity="start"
+                android:src="@drawable/i_back_arrow"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="16dp"/>
+        </FrameLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:layout_marginBottom="8dp">
+            <TextView
+                android:id="@+id/tvDayNameTaskCat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thursday"
+                android:textColor="@color/black"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="22dp"
+                android:textSize="24sp"
+                android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/tvDateTaskCat"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentBottom="true"
+                android:layout_below="@id/tvDayNameTaskCat"
+                android:textSize="14sp"
+                android:gravity="top"
+                android:fontFamily="@font/product_sans_bold"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="8dp"
+                android:text="1402/8/9"/>
+
+            <ImageView
+                android:id="@+id/icDayWeekCategory"
+                android:layout_marginTop="18dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="24dp"
+                android:src="@drawable/w_thursday" />
+
+
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/emptyStateTaskCat"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="390dp">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/empty_state_tasks"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="46dp"
+            android:layout_marginEnd="46dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="There is no task category for your task"/>
+        <TextView
+            android:id="@+id/tvAddTaskCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/colorAccent"
+            android:text="Add Some Category"/>
+
+    </LinearLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTaskCat"
+        android:visibility="gone"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="162dp"
+        tools:listitem="@layout/task_item"
+
+        />
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/categoryBtnAddTaskCat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="16dp"
+        android:src="@drawable/baseline_add_24"
+        android:backgroundTint="@color/colorAccent"
+        app:tint="@color/white"/>
+</FrameLayout>
